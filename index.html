@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline — Угадай год</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">Timeline</div>
+  <div class="round-info">
+    <span>Раунд <b id="roundNum">1</b>/<b id="roundTotal">10</b></span>
+    <span>Очки: <b id="score">0</b></span>
+  </div>
+  <button id="menuBtn" class="menu-btn" title="В главное меню">⏹ Меню</button>
+</header>
+
+<main class="game-area">
+
+  <!-- ============ Стартовый экран ============ -->
+  <section id="startScreen" class="screen active">
+    <h1>Угадай год</h1>
+    <p class="subtitle">
+      Расставь события на временной шкале в правильном порядке —
+      от самого древнего к самому новому.
+    </p>
+
+    <h2>Выбери категорию</h2>
+    <div class="category-grid" id="categoryGrid"></div>
+
+    <button id="startBtn" class="primary-btn" disabled>Начать игру</button>
+  </section>
+
+  <!-- ============ Игровой экран ============ -->
+  <section id="gameScreen" class="screen">
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <p class="instruction">
+      Перетаскивай карточки, чтобы расставить их по порядку — от древних к новым.
+      На телефоне: тапни первую, затем вторую, чтобы поменять местами.
+    </p>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline-line"></div>
+      <div class="cards-row" id="cardsRow"></div>
+    </div>
+
+    <div class="controls">
+      <button class="lock-btn" id="checkBtn">Проверить</button>
+      <button class="lock-btn ghost" id="shuffleBtn">Перемешать</button>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+
+    <div class="next-wrap">
+      <button id="nextBtn" class="primary-btn hidden">Следующий раунд</button>
+    </div>
+  </section>
+
+  <!-- ============ Финальный экран ============ -->
+  <section id="endScreen" class="screen">
+    <h1>Игра окончена!</h1>
+    <p class="final-score">Твой результат: <b id="finalScore">0</b> / 1000</p>
+    <p id="finalMessage" class="final-message"></p>
+    <div class="end-buttons">
+      <button id="restartBtn" class="primary-btn">Играть снова</button>
+      <button id="toMenuBtn" class="primary-btn ghost">В главное меню</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
